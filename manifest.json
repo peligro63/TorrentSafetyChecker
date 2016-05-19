@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Torrent Safety Checker",
+  "version": "1.0",
+  "author": "Farzad Daei, Kimia Barkam, Amir Ali Barkam",
+  "icons": {
+    "128": "logo.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_title": "Torrent Safety Checker",
+	"default_popup": "menu/"
+  },
+  "content_scripts": [
+  {
+		"matches": [
+		  "https://thepiratebay.org/*"
+		],
+		"js": ["jquery-2.2.3.min.js", "bootstrap.js", "sites/thepiratebay.js"]
+  },
+  {
+		"matches": [
+		  "http://kickasstorrentsim.com/*"
+		],
+		"js": ["jquery-2.2.3.min.js", "bootstrap.js", "sites/kickasstorrents.js"]
+  }],
+  "permissions": [
+	  "https://thepiratebay.org/*",
+      "http://kickasstorrentsim.com/*"
+  ]
+}
